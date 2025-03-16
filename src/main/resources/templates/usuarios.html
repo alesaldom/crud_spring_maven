@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>crud usuarios</title>
+</head>
+<body>
+<h2>Lista de Usuarios</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Acciones</th>
+    </tr>
+    <tr th:each="usuario : ${usuarios}">
+        <td th:text="${usuario.id}"></td>
+        <td th:text="${usuario.nombre}"></td>
+        <td th:text="${usuario.email}"></td>
+        <td>
+            <a th:href="@{/usuarios/eliminar/{id}(id=${usuario.id})}">Eliminar</a>
+        </td>
+    </tr>
+</table>
+<h2>Agregar Usuario</h2>
+<form action="/usuarios/agregar" method="post">
+    <label>Nombre: <input type="text" name="nombre"></label><br>
+    <label>Email: <input type="email" name="email"></label><br>
+    <button type="submit">Agregar</button>
+</form>
+</body>
+</html>
