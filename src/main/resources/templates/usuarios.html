@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>crud usuarios</title>
 </head>
 <body>
 <h2>Lista de Usuarios</h2>
+<h1>Bienvenido, <span th:text="${nombre}">Usuario</span>!</h1>
 <table border="1">
     <tr>
         <th>ID</th>
